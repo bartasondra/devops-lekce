@@ -1,0 +1,232 @@
+Linux:
+
+Základní příkazy a práce s terminálem.
+
+- ls
+- cd
+- cp
+- mv
+- rm
+- echo 
+- touch
+- mkdir
+- pwd
+- grep
+- cat
+
+Správa uživatelů, práv a souborového systému.
+
+- groupadd / addgroup
+- useradd / adduser
+- usermod -aG nova_skupina moj_uzivatel
+- chown
+- chmod
+
+Instalace a konfigurace služeb.
+- apt
+- yum
+- apk
+
+Text
+- vim / vi
+- nano
+
+Scriptování
+#############################################x
+Proměnné:
+- Přiřazení hodnoty do proměnné:
+my_variable="Hello, World!"
+
+- Použití hodnoty proměnné:
+echo $my_variable
+
+Vstup od uživatele:
+- Přijetí vstupu od uživatele:
+read name
+echo "Hello, $name!"
+
+############################################
+Podmínky:
+
+- Podmíněné vykonání kódu:
+if [ $age -gt 18 ]; then
+    echo "You are an adult."
+else
+    echo "You are a minor."
+fi
+
+###############################################
+Cykly:
+
+- Cyklus while:
+counter=1
+while [ $counter -le 10 ]; do
+    echo $counter
+    ((counter++))
+done
+
+##################################################
+Příkazové argumenty:
+
+- Použití příkazových argumentů ze souboru:
+#!/bin/bash
+
+echo "Hello, $1!"
+echo "You are $2 years old."
+
+####################################################
+Podmíněný výběr:
+
+- Podmíněné vykonání kódu pomocí case:
+
+
+case $option in
+    "start")
+        echo "Starting..."
+        ;;
+    "stop")
+        echo "Stopping..."
+        ;;
+    *)
+        echo "Unknown option."
+        ;;
+esac
+
+#####################################################
+Funkce:
+
+greet() {
+    echo "Hello, $1!"
+}
+greet "John"
+
+
+#######################################################
+Souborové operace:
+
+Kontrola existence souboru nebo adresáře:
+
+
+if [ -f $filename ]; then
+    echo "$filename exists."
+fi
+
+
+###############################################
+Přesun nebo přejmenování souboru:
+
+mv $oldfile $newfile
+
+###################################################
+Práce se seznamy:
+
+fruits=("apple" "banana" "orange")
+for fruit in "${fruits[@]}"; do
+    echo $fruit
+done
+
+#####################################################
+Podprocesy:
+
+Spuštění příkazu v podprocesu a získání výstupu:
+result=$(ls)
+echo $result
+
+#######################################################
+Podřetězce (substring):
+
+Získání podřetězce ze řetězce:
+
+
+string="Hello, World!"
+substring=${string:7:5}  # Výsledek: "World"
+
+
+######################################################################
+Podmíněné operace souborů:
+
+Kontrola typu souboru nebo adresáře:
+
+if [ -d $directory ]; then
+    echo "$directory is a directory."
+fi
+
+
+#######################################################################x
+Aritmetické operace:
+
+Provádění aritmetických operací:
+result=$((5 + 3))
+echo $result
+
+
+#######################################################################
+Práce se soubory:
+
+Čtení a zápis do souboru:
+
+
+# Čtení ze souboru
+while IFS= read -r line; do
+    echo "$line"
+done < filename.txt
+
+# Zápis do souboru
+echo "Hello, World!" > output.txt
+
+
+###################################################################
+Časování:
+
+Měření času vykonávání kódu:
+
+
+start_time=$(date +%s)
+
+# Váš kód zde
+
+end_time=$(date +%s)
+duration=$((end_time - start_time))
+echo "Execution time: $duration seconds."
+
+
+######################################################################
+Návratový kód:
+
+Nastavení návratového kódu skriptu:
+echo $?
+
+exit 0  # Úspěšný návrat
+exit 1  # Neúspěšný návrat
+
+
+#######################################################################
+Manipulace s řetězci:
+
+Konkatenace řetězců:
+
+
+first_name="John"
+last_name="Doe"
+full_name=$first_name$last_name
+echo $full_name
+
+###########################################################################
+Výrazy s logickými operátory:
+
+Porovnávání hodnot s logickými operátory:
+if [ $num1 -gt 0 -a $num2 -gt 0 ]; then
+    echo "Both numbers are positive."
+fi
+
+##########################################################################
+Zpracování chyb:
+
+Zpracování chyb a chybového výstupu:
+
+
+command_that_may_fail
+if [ $? -ne 0 ]; then
+    echo "Command failed."
+fi
+
