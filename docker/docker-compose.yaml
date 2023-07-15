@@ -1,0 +1,19 @@
+services: # app
+  web4:
+    image: "nginx:latest"
+    ports:
+      - 8081:80
+    environment:
+      - NAME=ONDRA
+  web5:
+    image: "nginx:latest"
+    ports:
+      - 8082:80
+    environment:
+      - NAME=ONDRA
+  web6:
+    image: "nginx:latest"
+    ports:
+      - 8083:80
+    environment:
+      - NAME=ONDRA

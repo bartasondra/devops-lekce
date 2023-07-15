@@ -1,0 +1,21 @@
+name: ondra
+age: 34
+address:
+  street: svatojánská
+  number: 111
+  city: lhenice
+pets:
+  - animal: dog
+    name: baki
+  - animal: dog
+    name: ajli
+  - animal: cat
+    name: gali
+  - animal: cat
+    name: nina
+hasChilds: true
+
+fruits:
+- banana
+- apple
+- orange
